@@ -1,5 +1,5 @@
 {
-  "name": "arduino-temp-sensor",
+  "name": "arduino-api",
   "version": "0.0.1",
   "description": "API for arduino tempature sensor",
   "main": "index.js",
