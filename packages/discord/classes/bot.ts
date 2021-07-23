@@ -7,14 +7,14 @@ import Discord, {
   GuildMember,
   TextChannel,
 } from "discord.js";
-import { discordConfig } from "../util/config";
-import { error, log } from "../util/log";
+import { discordConfig } from "../util/config.js";
+import { error, log } from "../util/log.js";
 
 /**
  * @class Main bot class
  */
 export class Bot {
-  private client: Discord.Client = new Discord.Client();
+  public client: Discord.Client = new Discord.Client();
   private guild: Guild = new Discord.Guild(this.client, {});
   readonly channels: ChannelManager;
   readonly guilds: GuildManager;
@@ -76,11 +76,4 @@ export class Bot {
     });
   }
 
-  public onMessage() {
-    this.client.on("message", (message) => {
-      if (message.toString() === `${discordConfig.prefix}pong`) {
-        message.reply("Ping!");
-      }
-    });
-  }
 }
